@@ -1,0 +1,42 @@
+{
+  "name": "react-library-starter",
+  "license": "MIT",
+  "version": "0.1.0",
+  "exports": {
+    "./package.json": "./package.json",
+    "./styles": "./dist/styles/index.css",
+    "./styles/*": "./dist/styles/*/.css",
+    ".": "./dist/index.js",
+    "./*": "./dist/*/index.js"
+  },
+  "scripts": {
+    "build": "yarn lib-build && yarn demo-build",
+    "dev": "concurrently 'yarn lib-dev' 'yarn demo-dev'",
+    "demo-dev": "yarn next dev",
+    "demo-build": "yarn next build",
+    "demo-start": "yarn next start",
+    "lib-dev": "tszip dev",
+    "lib-build": "tszip build",
+    "lib-lint": "eslint --fix src/**/*.ts"
+  },
+  "dependencies": {
+    "@tszip/tszip": "5.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.9.0",
+    "@typescript-eslint/parser": "^5.9.0",
+    "eslint-plugin-react": "^7.28.0",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@types/react": "17.0.38",
+    "@types/react-dom": "latest",
+    "autoprefixer": "10.4.2",
+    "concurrently": "^7.0.0",
+    "eslint": "8.6.0",
+    "eslint-config-next": "^12.0.7",
+    "postcss": "latest",
+    "tailwindcss": "3.0.5",
+    "typescript": "^4.5.4"
+  }
+}
